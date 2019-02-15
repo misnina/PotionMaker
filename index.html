@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8"/>
   <title>Potion Maker</title>
-  <script type="text/javascript" src=""></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="Scripts/Utils.js"></script>
+  <script type="text/javascript" src="Scripts/GameManager.js"></script>
+  <script type="text/javascript" src="Scripts/Potion.js"></script>
+  <script type="text/javascript" src="Scripts/Material.js"></script>
+  <script type="text/javascript" src="Scripts/MaterialList.js"></script>
 
   <link rel="stylesheet" type="text/css" href="Styles/style.css">
 </head>
@@ -17,55 +23,14 @@
     <main>
       <div id='creation-side'>
         <div id='buttons'>
-          <button>Create Potion</button>
-          <button>Farm for Materials</button>
+          <button id='create-potion'>Create Potion</button>
+          <button id='farm-materials'>Farm for Materials</button>
         </div>
         <div id='material-list'>
-          <div class='material'>Material</div>
-          <div class='material'>Material</div>
-          <div class='material'>Material</div>
-          <div class='material'>Material</div>
-          <div class='material'>Material</div>
-          <div class='material'>Material</div>
-          <div class='material'>Material</div>
-          <div class='material'>Material</div>
-          <div class='material'>Material</div>
-
         </div>
       </div>
 
       <div id='potion-list'>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-        <div class='potion'>Blue Weak Potion</div>
-
       </div>
     </main>
 

@@ -29,11 +29,6 @@ body {
   text-align: center;
 }
 
-.spacer {
-  background-color: red;
-  flex-grow: 1;
-}
-
 header {
   @include flexdefine(row, 1);
   margin: 30px;
@@ -63,6 +58,10 @@ main {
 
     #buttons{
       @include flexdefine(column, 1);
+
+      button {
+        font-family: $primary-font;
+      }
     }
 
     #material-list{
