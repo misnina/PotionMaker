@@ -1,17 +1,92 @@
 @font-face {
   font-family:'ChevyRay BirdSeed';
-  src: url('Fonts/ChevyRayBirdSeed.ttf');
+  src: url('../Fonts/ChevyRayBirdSeed.ttf');
 }
 
 $primary-font: 'ChevyRay BirdSeed';
 $main-text-color: #000;
 $primary-color: #f9e284;
 
+@mixin flexdefine($direction, $grow) {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: $direction;
+  flex-grow: $grow;
+}
+
+#wrapper, html, body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   font-family: $primary-font;
   font-size: 15px;
 }
 
+#wrapper {
+  @include flexdefine(column, 0);
+  text-align: center;
+}
+
 .spacer {
+  background-color: red;
   flex-grow: 1;
+}
+
+header {
+  @include flexdefine(row, 1);
+  margin: 30px;
+  justify-content: center;
+
+  #portrait {
+    margin: 20px;
+    img {
+      border: 2px solid $primary-color;
+      vertical-align: middle;
+    }
+  }
+
+  #text {
+    margin: 10px;
+    vertical-align: middle;
+  }
+}
+
+main {
+  @include flexdefine(row, 3);
+  height: 40%;
+
+  #creation-side {
+    @include flexdefine(column, 1);
+    height: 100%;
+
+    #buttons{
+      @include flexdefine(column, 1);
+    }
+
+    #material-list{
+      @include flexdefine(column, 1);
+      height: 100%;
+      overflow-y: auto;
+
+      .material{
+        margin: 5px;
+      }
+    }
+  }
+
+  #potion-list {
+    @include flexdefine(column, 1);
+    height: 100%;
+    overflow-y: auto;
+    .potion{
+      margin: 5px;
+    }
+  }
+}
+
+footer {
+  @include flexdefine(row, 1);
+  margin:30px;
 }
