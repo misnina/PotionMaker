@@ -1,0 +1,17 @@
+@font-face {
+  font-family:'ChevyRay BirdSeed';
+  src: url('Fonts/ChevyRayBirdSeed.ttf');
+}
+
+$primary-font: 'ChevyRay BirdSeed';
+$main-text-color: #000;
+$primary-color: #f9e284;
+
+body {
+  font-family: $primary-font;
+  font-size: 15px;
+}
+
+.spacer {
+  flex-grow: 1;
+}

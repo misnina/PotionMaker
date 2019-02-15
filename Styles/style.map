@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "../Sass/style.css",
+	"sources": [
+		"../Sass/style.scss"
+	],
+	"sourcesContent": [
+		"@font-face {\r\n  font-family:'ChevyRay BirdSeed';\r\n  src: url('Fonts/ChevyRayBirdSeed.ttf');\r\n}\r\n\r\n$primary-font: 'ChevyRay BirdSeed';\r\n$main-text-color: #000;\r\n$primary-color: #f9e284;\r\n\r\nbody {\r\n  font-family: $primary-font;\r\n  font-size: 15px;\r\n}\r\n\r\n.spacer {\r\n  flex-grow: 1;\r\n}"
+	],
+	"mappings": "AAAA,UAAU;EACR,WAAW,EAAC,mBAAoB;EAChC,GAAG,EAAE,iCAAG;;;;AAOV,AAAA,IAAI,CAAC;EACH,WAAW,EALE,mBAAmB;EAMhC,SAAS,EAAE,IAAK;CACjB;;;AAED,AAAA,OAAO,CAAC;EACN,SAAS,EAAE,CAAE;CACd",
+	"names": []
+}

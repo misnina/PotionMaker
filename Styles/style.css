@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'ChevyRay BirdSeed';
+  src: url("Fonts/ChevyRayBirdSeed.ttf");
+}
+
+/* line 10, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
+body {
+  font-family: "ChevyRay BirdSeed";
+  font-size: 15px;
+}
+
+/* line 15, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
+.spacer {
+  flex-grow: 1;
+}
+
+/*# sourceMappingURL=../Styles/style.map */
