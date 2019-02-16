@@ -1,7 +1,7 @@
 class GameManager {
 
   constructor() {
-    this.gold = 100;
+    this.gold = 50;
     this.potions = [];
     this.materials = new MaterialList();
   }
@@ -24,6 +24,7 @@ class GameManager {
   update() {
     this.renderPotionList();
     this.renderMaterialList();
+    this.renderGold();
   }
 
   renderPotionList() {
@@ -32,7 +33,7 @@ class GameManager {
       let potionInsert = 
       `<div class="potion" id="${i}">
         ${potion.potency} ${potion.color} potion
-        <button class="sell">Sell</button></li>
+        <button class="sell">Sell | $${potion.price}</button></li>
       </div>`;
       $('#potion-list').append(potionInsert);
       $(`#${i}`).find(".sell").click(() => {this.sellPotion(i)});
@@ -54,6 +55,10 @@ class GameManager {
     });
   }
 
+  renderGold() {
+    $('#gold').html(`Gold: $${this.gold}`);
+  }
+
   createMaterialsList() {
     this.materials.push(new Material({name: "slime", amount: 0}));
     this.materials.push(new Material({name: "sunflowers", amount: 0}));
@@ -61,8 +66,14 @@ class GameManager {
   }
 
   addMaterials() {
+    if(this.gold < 10) {
+      $('#text').html(`"You don't have enough money to farm for materials!"`);
+      return
+    }
+
+    this.gold -= 10;
     this.materials.push(new Material({name: "slime", amount: Utils.randomNumber(0, 5)}));
-    this.materials.push(new Material({name: "sunflowers", amount: Utils.randomNumber(0, 5)}));
+    this.materials.push(new Material({name: "sunflowers", amount: Utils.randomNumber(0, 3)}));
     this.update();
   }
 
@@ -73,17 +84,13 @@ class GameManager {
     potion.price = potion.getPrice();
     this.potions.push(potion);
     this.update();
-    console.log(this.potions);
   }
 
   sellPotion(i) {
     $(`#${i}`).empty();
-    console.log(this.potions[i].price);
     this.gold += this.potions[i].price;
     this.potions.splice(i, 1);
     this.update();
-
-    console.log(this.gold);
   }
 
   checkArray() {
@@ -93,7 +100,6 @@ class GameManager {
       console.log($(this).val());
       checkArray.push($(this).val());
     });
-    console.log(checkArray);
     
     let that = this;
     let allValid = (checkArray.length == 2) && checkArray.every((item) => {
@@ -118,7 +124,6 @@ class GameManager {
   }
 
   useMaterials(items) {
-
     let that = this;
     items.forEach((item) => {
       that.materials[GameManager.MaterialKeys[item]].amount--;

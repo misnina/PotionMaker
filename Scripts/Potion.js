@@ -34,8 +34,7 @@ class Potion {
   }
 
   getPrice() {
-    console.log(Potion.colorPrice[this.color]);
-    return Potion.colorPrice[this.color] + Potion.colorPrice[this.potency];
+    return Potion.colorPrice[this.color] + Potion.potencyPrice[this.potency];
   }
 }
 
@@ -64,9 +63,9 @@ Potion.colorPrice = {
   yellow: 10,
   orange: 20,
   red: 10,
-  violet: 20,
+  violet: 30,
   blue: 10,
-  green: 20,
+  green: 10,
   brown: 5,
 }
 

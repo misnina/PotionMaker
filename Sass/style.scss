@@ -4,28 +4,43 @@
 }
 
 $primary-font: 'ChevyRay BirdSeed';
-$main-text-color: #000;
+$main-text-color: #3c165b;
 $primary-color: #f9e284;
+$secondary-color: #a97ecc;
+$accent-color: #ddb942;
 
 @mixin flexdefine($direction, $grow) {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: safe space-evenly;
   flex-direction: $direction;
   flex-grow: $grow;
 }
 
 .spacer {
   flex-grow: 1;
+  background-color: $primary-color;
 }
 
 #wrapper, html, body {
   height: 100%;
   margin: 0;
+  background-color: $secondary-color;
+  color: $main-text-color;
 }
 
 body {
   font-family: $primary-font;
   font-size: 15px;
+}
+
+button {
+  font-family: $primary-font;
+  color: $primary-color;
+  border: 0;
+  background-color: $secondary-color;
+  margin: 5px;
+  padding: 2px;
+
 }
 
 #wrapper {
@@ -34,9 +49,10 @@ body {
 }
 
 header {
-  @include flexdefine(row, 1);
-  margin: 30px;
-  justify-content: center;
+  @include flexdefine(row, 0);
+  padding: 30px;
+  justify-content: safe center;
+  background-color: $secondary-color;
 
   #portrait {
     margin: 20px;
@@ -48,6 +64,7 @@ header {
 
   #text {
     @include flexdefine(row, 3);
+    justify-content: center;
     flex-wrap: wrap;
     margin: 10px;
     vertical-align: middle;
@@ -57,23 +74,28 @@ header {
 main {
   @include flexdefine(row, 3);
   height: 40%;
+  background-color: $accent-color;
 
   #creation-side {
     @include flexdefine(column, 1);
-    height: 100%;
+    height: 90%;
+    background-color: $primary-color;
+    margin: 5px;
+    margin-left: 20px;
+    padding: 10px;
+    border: 5px solid $accent-color;
 
     #buttons{
       @include flexdefine(column, 1);
-
-      button {
-        font-family: $primary-font;
-      }
     }
 
     #material-list{
       @include flexdefine(column, 1);
       height: 100%;
       overflow-y: auto;
+      margin-top: 20px;
+      justify-content: left;
+      text-align: left;
 
       .material{
         margin: 5px;
@@ -83,24 +105,37 @@ main {
 
   #make-side {
     @include flexdefine(column, 2)
+    height: 100%;
+    width: 200px;
+    margin: 5px;
+    margin-right: 20px;
+    padding: 10px;
 
-    #potion-text {
-      flex-grow: 1;
+    #gold {
+      flex-grow: 2;
     }
-
 
     #potion-list {
       @include flexdefine(column, 5);
       height: 100%;
       overflow-y: auto;
+      margin-top: 20px;
+
       .potion{
         margin: 5px;
       }
+    }
+
+    button {
+      background-color: $primary-color;
+      color: $secondary-color;
     }
   }
 }
 
 footer {
-  @include flexdefine(row, 1);
-  margin:30px;
+  @include flexdefine(row, 0);
+  justify-content: center;
+  padding:30px;
+  background-color: $secondary-color;
 }
