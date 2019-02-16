@@ -4,18 +4,23 @@
 }
 
 /* line 17, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
+.spacer {
+  flex-grow: 1;
+}
+
+/* line 21, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
 #wrapper, html, body {
   height: 100%;
   margin: 0;
 }
 
-/* line 22, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
+/* line 26, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
 body {
   font-family: "ChevyRay BirdSeed";
   font-size: 15px;
 }
 
-/* line 27, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
+/* line 31, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
 #wrapper {
   display: flex;
   justify-content: space-evenly;
@@ -24,7 +29,7 @@ body {
   text-align: center;
 }
 
-/* line 32, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
+/* line 36, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
 header {
   display: flex;
   justify-content: space-evenly;
@@ -34,24 +39,29 @@ header {
   justify-content: center;
 }
 
-/* line 37, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
+/* line 41, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
 header #portrait {
   margin: 20px;
 }
 
-/* line 39, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
+/* line 43, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
 header #portrait img {
   border: 2px solid #f9e284;
   vertical-align: middle;
 }
 
-/* line 45, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
+/* line 49, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
 header #text {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-grow: 3;
+  flex-wrap: wrap;
   margin: 10px;
   vertical-align: middle;
 }
 
-/* line 51, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
+/* line 57, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
 main {
   display: flex;
   justify-content: space-evenly;
@@ -60,7 +70,7 @@ main {
   height: 40%;
 }
 
-/* line 55, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
+/* line 61, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
 main #creation-side {
   display: flex;
   justify-content: space-evenly;
@@ -69,7 +79,7 @@ main #creation-side {
   height: 100%;
 }
 
-/* line 59, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
+/* line 65, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
 main #creation-side #buttons {
   display: flex;
   justify-content: space-evenly;
@@ -77,12 +87,12 @@ main #creation-side #buttons {
   flex-grow: 1;
 }
 
-/* line 62, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
+/* line 68, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
 main #creation-side #buttons button {
   font-family: "ChevyRay BirdSeed";
 }
 
-/* line 67, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
+/* line 73, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
 main #creation-side #material-list {
   display: flex;
   justify-content: space-evenly;
@@ -92,27 +102,40 @@ main #creation-side #material-list {
   overflow-y: auto;
 }
 
-/* line 72, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
+/* line 78, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
 main #creation-side #material-list .material {
   margin: 5px;
 }
 
-/* line 78, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
-main #potion-list {
+/* line 84, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
+main #make-side {
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
+  flex-grow: 2;
+}
+
+/* line 87, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
+main #make-side #potion-text {
   flex-grow: 1;
+}
+
+/* line 92, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
+main #make-side #potion-list {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  flex-grow: 5;
   height: 100%;
   overflow-y: auto;
 }
 
-/* line 82, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
-main #potion-list .potion {
+/* line 96, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
+main #make-side #potion-list .potion {
   margin: 5px;
 }
 
-/* line 88, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
+/* line 103, C:/Users/ninab/Documents/Code/javascript/PotionMaker/Sass/style.scss */
 footer {
   display: flex;
   justify-content: space-evenly;

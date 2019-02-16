@@ -32,9 +32,10 @@ class GameManager {
       let potionInsert = 
       `<div class="potion" id="${i}">
         ${potion.potency} ${potion.color} potion
+        <button class="sell">Sell</button></li>
       </div>`;
-
       $('#potion-list').append(potionInsert);
+      $(`#${i}`).find(".sell").click(() => {this.sellPotion(i)});
 
     })
   }
@@ -44,8 +45,8 @@ class GameManager {
     this.materials.forEach((item) => {
       let materialInsert =
       `<div class="material">
-        <input type="checkbox" class="box" "id="${item.name}" value="${item.name}"/>
-        ${item.name} ${item.amount}
+        <input type="checkbox" class="box" id="${item.name}" value="${item.name}"/>
+        ${Material.items[item.name].properName} ${item.amount}
       </div>
       `;
 
@@ -65,10 +66,24 @@ class GameManager {
     this.update();
   }
 
-  addPotion() {
-    this.potions.push(new Potion({potency: "weak", color: "green"}));
+  addPotion(items) {
+    let potion = new Potion();
+    potion.potency = potion.getPotency(items);
+    potion.color = potion.getColor(items);
+    potion.price = potion.getPrice();
+    this.potions.push(potion);
     this.update();
     console.log(this.potions);
+  }
+
+  sellPotion(i) {
+    $(`#${i}`).empty();
+    console.log(this.potions[i].price);
+    this.gold += this.potions[i].price;
+    this.potions.splice(i, 1);
+    this.update();
+
+    console.log(this.gold);
   }
 
   checkArray() {
@@ -81,8 +96,7 @@ class GameManager {
     console.log(checkArray);
     
     let that = this;
-    let allValid = checkArray.length && checkArray.every((item) => {
-      console.log(that.materials[0]);
+    let allValid = (checkArray.length == 2) && checkArray.every((item) => {
       return that.materials[GameManager.MaterialKeys[item]].amount > 0;
     });
 
@@ -92,14 +106,14 @@ class GameManager {
       this.createPotion(checkArray);
       $('#text').html('"Potion successfully created!');
     } else {
-      $('#text').html(`"You don't have the ingredients!"`);
+      $('#text').html(`"You must select only two ingredients, of which you have stock of."`);
     }
 
   }
 
-  createPotion(checkArray) {
-    this.addPotion();
-    this.useMaterials(checkArray);
+  createPotion(items) {
+    this.addPotion(items);
+    this.useMaterials(items);
     this.update();
   }
 

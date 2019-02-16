@@ -14,6 +14,10 @@ $primary-color: #f9e284;
   flex-grow: $grow;
 }
 
+.spacer {
+  flex-grow: 1;
+}
+
 #wrapper, html, body {
   height: 100%;
   margin: 0;
@@ -43,6 +47,8 @@ header {
   }
 
   #text {
+    @include flexdefine(row, 3);
+    flex-wrap: wrap;
     margin: 10px;
     vertical-align: middle;
   }
@@ -75,12 +81,21 @@ main {
     }
   }
 
-  #potion-list {
-    @include flexdefine(column, 1);
-    height: 100%;
-    overflow-y: auto;
-    .potion{
-      margin: 5px;
+  #make-side {
+    @include flexdefine(column, 2)
+
+    #potion-text {
+      flex-grow: 1;
+    }
+
+
+    #potion-list {
+      @include flexdefine(column, 5);
+      height: 100%;
+      overflow-y: auto;
+      .potion{
+        margin: 5px;
+      }
     }
   }
 }

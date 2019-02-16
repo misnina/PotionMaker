@@ -9,24 +9,15 @@ class Material {
 
 Material.items = {
   slime: {
-    name: 'slime',
+    properName: 'Green Slime',
     price: 5,
     color: 'green',
+    potency: 'weak',
   },
   sunflowers: {
-    name: 'sunflowers',
+    properName: 'Yellow Sunflowers',
     price: 3,
     color: 'yellow',
+    potency: 'medium',
   }
-}
-
-Material.colorCombos = {
-  [['yellow', 'yellow']]: 'yellow',
-  [['orange', 'yellow']]: 'orange',
-  [['red', 'yellow']]: 'orange',
-  [['violet', 'yellow']]: 'brown',
-  [['blue', 'yellow']]: 'green',
-  [['green', 'yellow']]: 'green',
-  [['orange', 'red']]: 'orange',
-  [['orange', 'violet']]: 'brown',
 }
