@@ -91,5 +91,5 @@ Potion.colorPrice = {
 Potion.potencyPrice = {
   weak: 5,
   medium: 10,
-  price: 20,
+  strong: 20,
 }
