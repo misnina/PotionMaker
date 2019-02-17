@@ -47,7 +47,7 @@ class GameManager {
       let materialInsert =
       `<div class="material">
         <input type="checkbox" class="box" id="${item.name}" value="${item.name}"/>
-        ${Material.items[item.name].properName} ${item.amount}
+        (${item.amount}) ${Material.items[item.name].properName}
       </div>
       `;
 
@@ -60,8 +60,11 @@ class GameManager {
   }
 
   createMaterialsList() {
-    this.materials.push(new Material({name: "slime", amount: 0}));
-    this.materials.push(new Material({name: "sunflowers", amount: 0}));
+    this.materials.push(new Material({name: "slime", amount: 5}));
+    this.materials.push(new Material({name: "sunflowers", amount: 1}));
+    this.materials.push(new Material({name: "spices", amount: 0}));
+    this.materials.push(new Material({name: "blaze", amount: 0}));
+    this.materials.push(new Material({name: "lapis", amount: 0}));
     this.update();
   }
 
@@ -72,8 +75,14 @@ class GameManager {
     }
 
     this.gold -= 10;
-    this.materials.push(new Material({name: "slime", amount: Utils.randomNumber(0, 5)}));
-    this.materials.push(new Material({name: "sunflowers", amount: Utils.randomNumber(0, 3)}));
+
+    for(let item in Material.items) {
+      let rand = Utils.randomNumber(0, Material.items[item].maxRange);
+      if (rand != 0) {
+        this.materials.push(new Material({name: item, amount: rand}));
+      }
+    }
+
     this.update();
   }
 
@@ -136,6 +145,9 @@ class GameManager {
 GameManager.MaterialKeys = {
   slime: 0,
   sunflowers: 1,
+  spices: 2,
+  blaze: 3,
+  lapis: 4,
 }
 
 

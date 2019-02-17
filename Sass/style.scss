@@ -4,10 +4,16 @@
 }
 
 $primary-font: 'ChevyRay BirdSeed';
-$main-text-color: #3c165b;
+$main-text-color: #ffffff;
+$secondary-text-color: #3c165b;
 $primary-color: #f9e284;
 $secondary-color: #a97ecc;
 $accent-color: #ddb942;
+
+$link-text-default: #f9e284;
+$link-text-visited: #f9e284;
+$link-text-hover: #ddb942;
+$link-text-active: #f9e284;
 
 @mixin flexdefine($direction, $grow) {
   display: flex;
@@ -21,11 +27,45 @@ $accent-color: #ddb942;
   background-color: $primary-color;
 }
 
+html {
+  background-color: $secondary-color;
+}
+
+
+a:link {
+  color: $link-text-default;
+  text-decoration: none;
+}
+a:visited {
+  color: $link-text-visited;
+  text-decoration: none;
+}
+a:hover {
+  color: $link-text-hover;
+  text-decoration: none;
+}
+a:active {
+  color: $link-text-active;
+  text-decoration: none;
+}
+
+
 #wrapper, html, body {
   height: 100%;
   margin: 0;
-  background-color: $secondary-color;
   color: $main-text-color;
+}
+
+#background {
+  content: "";
+  background-image: url("../Images/fancy-cushion.png");
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
 }
 
 body {
@@ -39,7 +79,7 @@ button {
   border: 0;
   background-color: $secondary-color;
   margin: 5px;
-  padding: 2px;
+  padding: 5px;
 
 }
 
@@ -52,7 +92,6 @@ header {
   @include flexdefine(row, 0);
   padding: 30px;
   justify-content: safe center;
-  background-color: $secondary-color;
 
   #portrait {
     margin: 20px;
@@ -69,12 +108,13 @@ header {
     margin: 10px;
     vertical-align: middle;
   }
+
+
 }
 
 main {
   @include flexdefine(row, 3);
   height: 40%;
-  background-color: $accent-color;
 
   #creation-side {
     @include flexdefine(column, 1);
@@ -84,6 +124,7 @@ main {
     margin-left: 20px;
     padding: 10px;
     border: 5px solid $accent-color;
+    color: $secondary-text-color;
 
     #buttons{
       @include flexdefine(column, 1);
@@ -123,6 +164,10 @@ main {
 
       .potion{
         margin: 5px;
+
+        .sell {
+          color: $secondary-text-color;
+        }
       }
     }
 
@@ -134,8 +179,6 @@ main {
 }
 
 footer {
-  @include flexdefine(row, 0);
   justify-content: center;
   padding:30px;
-  background-color: $secondary-color;
 }

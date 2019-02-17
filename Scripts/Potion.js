@@ -41,13 +41,26 @@ class Potion {
 //Sort Alpabetically
 Potion.colorCombos = {
   [['yellow', 'yellow']]: 'yellow',
-  [['orange', 'yellow']]: 'orange',
+  [['orange', 'yellow']]: 'yellow-orange',
   [['red', 'yellow']]: 'orange',
   [['violet', 'yellow']]: 'brown',
   [['blue', 'yellow']]: 'green',
-  [['green', 'yellow']]: 'green',
-  [['orange', 'red']]: 'orange',
+  [['green', 'yellow']]: 'yellow-green',
+  [['orange', 'red']]: 'red-orange',
   [['orange', 'violet']]: 'brown',
+  [['blue', 'orange']]: 'brown',
+  [['green', 'orange']]: 'brown',
+  [['red', 'red']]: 'red',
+  [['red', 'violet']]: 'red-violet',
+  [['blue', 'red']]: 'violet',
+  [['green', 'red']]: 'brown',
+  [['violet', 'violet']]: 'violet',
+  [['blue', 'violet']]: 'blue-violet',
+  [['green', 'violet']]: 'brown',
+  [['blue', 'blue']]: 'blue',
+  [['blue', 'green']]: 'blue-green',
+  [['green', 'green']]: 'green',
+
 }
 
 Potion.potencyCombos = {
@@ -61,11 +74,17 @@ Potion.potencyCombos = {
 
 Potion.colorPrice = {
   yellow: 10,
+  'yellow-orange':30,
   orange: 20,
+  'red-orange': 30,
   red: 10,
+  'red-violet': 20,
   violet: 30,
+  'blue-violet': 20,
   blue: 10,
+  'blue-green': 25,
   green: 10,
+  'yellow-green': 10,
   brown: 5,
 }
 
